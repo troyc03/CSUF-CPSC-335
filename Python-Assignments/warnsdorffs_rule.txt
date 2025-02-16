@@ -1,0 +1,23 @@
+Algorithm Warnsdorffs_Knights_Tour(N)
+    
+    Input: N (size of the chessboard, N x N)
+    Output: A sequence of moves completing the knight’s tour or failure if no tour is found
+
+    1. Initialize board[N][N] with -1 (indicating unvisited squares)
+    2. Define knight’s possible moves as (dx, dy) pairs:
+       moves = [(2,1), (1,2), (-1,2), (-2,1), (-2,-1), (-1,-2), (1,-2), (2,-1)]
+    
+    3. Choose a random starting position (x, y)
+    4. Mark board[x][y] as step 0 (starting position)
+
+    5. For step from 1 to N² - 1 do:
+        a. Find all valid moves (x', y') from (x, y) that are within bounds and unvisited
+        b. For each valid move (x', y'), compute w(x', y') = number of onward moves
+        c. Select the move (x_min, y_min) with the smallest w(x', y')
+        d. Move knight to (x_min, y_min) and mark board[x_min][y_min] with current step
+        e. Update (x, y) to (x_min, y_min)
+
+    6. If all squares are visited, return board as the Knight’s Tour path
+    7. Else, return failure (tour not found)
+
+End Algorithm

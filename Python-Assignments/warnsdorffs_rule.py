@@ -44,7 +44,7 @@ def warnsdorff_knights_tour(N):
         if not possible_moves:
             return None
         
-        # Choose move with minimum onward degree (Warnsdorff’s heuristic)
+        # Choose move with minimum onward degree (Warnsdorff's heuristic)
         possible_moves.sort()
         _, x, y = possible_moves[0]
         board[x][y] = step
@@ -60,7 +60,7 @@ def print_board(board, N):
 N = 8  # Board size
 solution = warnsdorff_knights_tour(N)
 if solution:
-    print("Knight's Tour Solution:")
+    print("\nKnight's Tour Solution:\n")
     print_board(solution, N)
 else:
     print("No tour found.")

@@ -5,7 +5,6 @@ Input: A function f(x) and its derivatives d^(k)/dx
 Output: The sum of all Taylor polynomials (or the partial sum of the Taylor series)
 """
 
-
 def taylor_polynomial(tol, N, x0, D, X):
     k = 0
     sum_Taylor = D[0]  # Initialize sum with the first term D(0)
